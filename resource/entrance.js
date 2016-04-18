@@ -1,8 +1,6 @@
-var http = require("http");
+var express = require('express');
+var app = express();
 
-http.createServer(function(request, response) {
-  response.writeHead(200, {"Content-Type": "text/plain"});
-  response.write("Hello World");
-  response.end();
-}).listen(8888);
+app.use(express.static(__dirname + "/public"));
 
+app.listen(3000);
